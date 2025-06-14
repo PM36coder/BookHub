@@ -46,20 +46,29 @@ BookVerse is a modern full-stack MERN application that allows users to explore, 
 
 ---
 
-## 📂 Folder Structure (Simplified)
+```
 bookverse/
-├── client/ # React Frontend
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── App.jsx
-│ │ └── main.jsx
-├── backend/ # Node + Express Backend
-│ ├── controllers/
-│ ├── models/
-│ ├── routes/
-│ ├── middleware/
-│ ├── server.js
+├── client/               # React Frontend
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/   # Reusable components (Header, Footer, etc.)
+│   │   ├── pages/        # Page-level components (Home, Login, etc.)
+│   │   ├── store/        # Context/Auth state
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── public/
+│   ├── index.html
+│   └── vite.config.js
+
+├── backend/              # Node + Express Backend
+│   ├── controllers/      # Route handler logic
+│   ├── models/           # Mongoose schemas
+│   ├── routes/           # Express routes
+│   ├── middleware/       # JWT/Auth middlewares
+│   ├── config/           # DB config (optional)
+│   └── server.js         # Entry point
+```
+
 
 
 
