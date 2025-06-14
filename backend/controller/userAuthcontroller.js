@@ -49,7 +49,7 @@ const login = async (req, res) =>{
      try{
         const user = await User.findOne({email : email})
         if(!user){
-            return res.status(401).json({})
+            return res.status(401).json({msg: 'User not found'})
         }
 
         //? check the password is same or not
