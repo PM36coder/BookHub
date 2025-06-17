@@ -11,9 +11,9 @@ const commentBook = require('./router/commentRouter')
 const bookShelf = require('./router/bookShelfRouter')
 const contactRoute = require('./router/contactRouter')
 app.use(cors({
-  origin: 'https://bookhub4u.netlify.app/',
+  origin: 'https://bookhub4u.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true, // Allow credentials if needed
+  
 }));
 app.use(express.json());
 
