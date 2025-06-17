@@ -79,6 +79,7 @@ export const Book = () => {
         `https://bookhub-backend.onrender.com/user/book/search?maxResults=12`,
         {
           headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
         }
       );
       setBooks(res.data.books);
@@ -104,6 +105,7 @@ export const Book = () => {
         `https://bookhub-backend.onrender.com/user/book/search?q=${searchQuery}&maxResults=12`,
         {
           headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
         }
       );
       setBooks(res.data.books);
@@ -135,6 +137,7 @@ export const Book = () => {
         `https://bookhub-backend.onrender.com/user/book/search?q=${searchQuery}&startIndex=${startIndex}&maxResults=12`,
         {
           headers: { Authorization: `Bearer ${token}` },
+          withCredentials: true,
         }
       );
       setBooks((prev) => [...prev, ...res.data.books]);
@@ -163,7 +166,8 @@ export const Book = () => {
           previewLink: book.previewLink,
           infoLink: book.infoLink
         },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } 
+        ,withCredentials: true,}
       );
       
       if (res.data.msg === "Book added to bookshelf") {
@@ -218,6 +222,7 @@ export const Book = () => {
           `https://bookhub-backend.onrender.com/user/book/search?q=${categoryId}&maxResults=12`,
           {
             headers: { Authorization: `Bearer ${token}` },
+            withCredentials: true,
           }
         );
         setBooks(res.data.books);

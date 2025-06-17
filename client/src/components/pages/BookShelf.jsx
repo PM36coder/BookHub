@@ -19,8 +19,10 @@ export const BookshelfPage = () => {
     try {
       const res = await axios.get(
         "https://bookhub-backend.onrender.com/user/bookshelf/get-books",
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` },
+      withCredentials: true, }
       );
+      
       setBooks(res.data.books);
     } catch (err) {
       console.log("Error fetching bookshelf:", err.message);
@@ -35,7 +37,8 @@ export const BookshelfPage = () => {
       await axios.post(
         "https://bookhub-backend.onrender.com/user/bookshelf/save-book",
         { googleId: book.googleId, title: book.title },
-        { headers: { Authorization: `Bearer ${token}` } }
+        { headers: { Authorization: `Bearer ${token}` } ,
+        withCredentials: true,}
       );
       setBooks(books.filter(b => b.googleId !== book.googleId));
       toast.success("Book removed from bookshelf");
