@@ -43,7 +43,7 @@ const navigator = useNavigate()
     return;
   }
 try {
-  const response = await fetch('http://localhost:2000/user/register',{
+  const response = await fetch('https://bookhub-backend.onrender.com/user/register',{
     method: 'POST',
     headers : {
       'Content-Type' : 'application/json'

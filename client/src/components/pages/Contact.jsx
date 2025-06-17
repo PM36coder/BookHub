@@ -34,7 +34,7 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://localhost:2000/user/contact', {
+      const response = await fetch('https://bookhub-backend.onrender.com/user/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

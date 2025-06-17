@@ -76,7 +76,7 @@ export const Book = () => {
     setError("");
     try {
       const res = await axios.get(
-        `http://localhost:2000/user/book/search?maxResults=12`,
+        `https://bookhub-backend.onrender.com/user/book/search?maxResults=12`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -101,7 +101,7 @@ export const Book = () => {
     try {
       const searchQuery = query || selectedCategory;
       const res = await axios.get(
-        `http://localhost:2000/user/book/search?q=${searchQuery}&maxResults=12`,
+        `https://bookhub-backend.onrender.com/user/book/search?q=${searchQuery}&maxResults=12`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -132,7 +132,7 @@ export const Book = () => {
       }
 
       const res = await axios.get(
-        `http://localhost:2000/user/book/search?q=${searchQuery}&startIndex=${startIndex}&maxResults=12`,
+        `https://bookhub-backend.onrender.com/user/book/search?q=${searchQuery}&startIndex=${startIndex}&maxResults=12`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -151,7 +151,7 @@ export const Book = () => {
   const toggleBookshelf = async (book) => {
     try {
       const res = await axios.post(
-        "http://localhost:2000/user/bookshelf/save-book",
+        "https://bookhub-backend.onrender.com/user/bookshelf/save-book",
         { 
           googleId: book.googleId,
           title: book.title,
@@ -203,7 +203,7 @@ export const Book = () => {
       if (categoryId === "all") {
         // Load initial books without any query
         const res = await axios.get(
-          `http://localhost:2000/user/book/search?maxResults=12`,
+          `https://bookhub-backend.onrender.com/user/book/search?maxResults=12`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -215,7 +215,7 @@ export const Book = () => {
       } else {
         // Search with category as query
         const res = await axios.get(
-          `http://localhost:2000/user/book/search?q=${categoryId}&maxResults=12`,
+          `https://bookhub-backend.onrender.com/user/book/search?q=${categoryId}&maxResults=12`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }

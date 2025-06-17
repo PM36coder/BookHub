@@ -18,7 +18,7 @@ export const BookshelfPage = () => {
   const fetchBookshelf = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:2000/user/bookshelf/get-books",
+        "https://bookhub-backend.onrender.com/user/bookshelf/get-books",
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setBooks(res.data.books);
@@ -33,7 +33,7 @@ export const BookshelfPage = () => {
   const removeFromBookshelf = async (book) => {
     try {
       await axios.post(
-        "http://localhost:2000/user/bookshelf/save-book",
+        "https://bookhub-backend.onrender.com/user/bookshelf/save-book",
         { googleId: book.googleId, title: book.title },
         { headers: { Authorization: `Bearer ${token}` } }
       );
