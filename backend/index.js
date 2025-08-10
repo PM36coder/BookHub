@@ -13,6 +13,11 @@ const contactRoute = require('./router/contactRouter')
 app.use(cors({
   origin: 'https://bookhub4u.netlify.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: [
+    "Content-Type",        // Needed for JSON, form-data, etc.
+    "Authorization",       // For JWT or Bearer tokens
+    "Accept"               // Lets client say what it can handle (JSON, HTML, etc.)
+  ],
   credentials: true,
 }));
 app.use(express.json());
